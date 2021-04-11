@@ -3,20 +3,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalapp/config/config_screen.dart';
 
-class Hospital extends StatelessWidget {
+class PaymentServices extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Hospitals",
+          "Payment Services",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         // backgroundColor: Colors.white,
       ),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection("Hospitals").snapshots(),
+        stream:
+            FirebaseFirestore.instance.collection("PriceServices").snapshots(),
         // ignore: missing_return
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -58,7 +59,7 @@ class Hospital extends StatelessWidget {
                               decoration: new BoxDecoration(
                                 color: const Color(0xff7c94b6),
                                 image: new DecorationImage(
-                                  image: AssetImage("image/hospital.png"),
+                                  image: AssetImage("image/img1.jpg"),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: new BorderRadius.all(
@@ -81,7 +82,12 @@ class Hospital extends StatelessWidget {
                                         fontSize: 15, color: Colors.black),
                                   ),
                                   Text(
-                                    e.data()["address"],
+                                    "Dr's Name : " + e.data()["drname"],
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Price : " + e.data()["price"],
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.black),
                                   ),

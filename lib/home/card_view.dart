@@ -4,6 +4,7 @@ import 'package:medicalapp/config/config_screen.dart';
 import 'package:medicalapp/widgets/appointment.dart';
 import 'package:medicalapp/widgets/doctors.dart';
 import 'package:medicalapp/widgets/hospital.dart';
+import 'package:medicalapp/widgets/payment_services.dart';
 
 class Cardview extends StatefulWidget {
   _Card_view createState() => _Card_view();
@@ -51,7 +52,9 @@ class _Card_view extends State<Cardview> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        print(value);
+                      },
                       decoration: InputDecoration(
                         hintText: "Search",
                         hintStyle: TextStyle(
@@ -191,6 +194,9 @@ class _Card_view extends State<Cardview> {
                 Card(
                   child: InkWell(
                     onTap: () {
+                      //  PaymentServices
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => PaymentServices()));
                       print("hii");
                     },
                     child: Container(

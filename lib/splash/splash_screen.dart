@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalapp/config/config_screen.dart';
@@ -18,6 +19,7 @@ class _Splash extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    Firebase.initializeApp();
     startTime();
   }
 

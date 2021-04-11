@@ -9,6 +9,9 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogIn extends State<LogIn> {
+  var _nameController = TextEditingController();
+  var _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +31,7 @@ class _LogIn extends State<LogIn> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: _nameController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
@@ -39,6 +43,7 @@ class _LogIn extends State<LogIn> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: _password,
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -47,9 +52,7 @@ class _LogIn extends State<LogIn> {
               ),
             ),
             FlatButton(
-              onPressed: () {
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
+              onPressed: () {},
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.blue, fontSize: 15),
@@ -62,10 +65,15 @@ class _LogIn extends State<LogIn> {
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                      (route) => false);
+                  print(_nameController.text);
+                  print(_password.text);
+                  if (_nameController.text.trim() == "tazra@gmail.com" &&
+                      _password.text.trim() == "12345") {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                        (route) => false);
+                  }
                 },
                 child: Text(
                   'Login',
