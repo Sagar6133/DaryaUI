@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalapp/config/config_screen.dart';
@@ -11,6 +12,13 @@ class Cardview extends StatefulWidget {
 }
 
 class _Card_view extends State<Cardview> {
+  Future<QuerySnapshot> getData(String queryString) async {
+    return FirebaseFirestore.instance
+        .collection("Doctors")
+        .where("name", isEqualTo: queryString)
+        .get();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +60,16 @@ class _Card_view extends State<Cardview> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
-                      onChanged: (value) {
-                        print(value);
+                      onChanged: (value) async {
+                        QuerySnapshot shot = await getData(value);
+                        return ListView.builder(
+                          itemCount: shot.docs.length,
+                          itemBuilder: (_, int index) {
+                            return ListTile(
+                              title: Text(shot.docs[index]["name"]),
+                            );
+                          },
+                        );
                       },
                       decoration: InputDecoration(
                         hintText: "Search",
