@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalapp/config/config_screen.dart';
+import 'package:medicalapp/widgets/chat_page.dart';
 
 class Appointment extends StatelessWidget {
   @override
@@ -47,25 +48,43 @@ class Appointment extends StatelessWidget {
                         height: Config.screenHeight / 8,
                         color: Colors.white,
                         child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Text(
-                                e.data()["name"],
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.black),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                //crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    e.data()["name"],
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Days : " + e.data()["days"],
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Time : " + e.data()["time"],
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.black),
+                                  )
+                                ],
                               ),
-                              Text(
-                                "Days : " + e.data()["days"],
-                                style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                              SizedBox(
+                                width: 50,
                               ),
-                              Text(
-                                "Time : " + e.data()["time"],
-                                style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
-                              )
+                              IconButton(
+                                  icon: Icon(Icons.chat),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => ChatPage()));
+                                  })
                             ],
                           ),
                         ),

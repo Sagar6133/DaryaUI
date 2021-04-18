@@ -103,7 +103,13 @@ class _Card_view extends State<Cardview> {
                           left: 10, top: 0, right: 0, bottom: 5),
                       width: Config.screenWidth / 2 - 20,
                       height: Config.screenHeight / 4,
-                      color: Colors.blueAccent,
+                      //  color: Colors.blueAccent,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('image/logo2.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -112,12 +118,12 @@ class _Card_view extends State<Cardview> {
                             Text(
                               "Find Doctor",
                               style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
+                                  TextStyle(fontSize: 20, color: Colors.black),
                             ),
                             Text(
                               "125 doctors",
                               style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.black),
                             )
                           ],
                         ),
@@ -139,7 +145,13 @@ class _Card_view extends State<Cardview> {
                           left: 10, top: 0, right: 0, bottom: 5),
                       width: Config.screenWidth / 2 - 20,
                       height: Config.screenHeight / 4,
-                      color: Colors.black45,
+                      //  color: Colors.black45,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('image/hospital.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -148,12 +160,12 @@ class _Card_view extends State<Cardview> {
                             Text(
                               "Find Hospital",
                               style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
+                                  TextStyle(fontSize: 20, color: Colors.black),
                             ),
                             Text(
                               "26 hospital",
                               style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.black),
                             )
                           ],
                         ),
@@ -182,7 +194,13 @@ class _Card_view extends State<Cardview> {
                           left: 10, top: 0, right: 0, bottom: 5),
                       width: Config.screenWidth / 2 - 20,
                       height: Config.screenHeight / 4,
-                      color: Colors.black45,
+                      //color: Colors.black45,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('image/logo.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -191,12 +209,12 @@ class _Card_view extends State<Cardview> {
                             Text(
                               "Appointment",
                               style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
+                                  TextStyle(fontSize: 20, color: Colors.black),
                             ),
                             Text(
                               "20 available",
                               style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.black),
                             )
                           ],
                         ),
@@ -220,7 +238,13 @@ class _Card_view extends State<Cardview> {
                           left: 10, top: 0, right: 0, bottom: 5),
                       width: Config.screenWidth / 2 - 20,
                       height: Config.screenHeight / 4,
-                      color: Colors.black45,
+                      //color: Colors.black45,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('image/logo.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -229,12 +253,12 @@ class _Card_view extends State<Cardview> {
                             Text(
                               "Price Services",
                               style:
-                                  TextStyle(fontSize: 20, color: Colors.white),
+                                  TextStyle(fontSize: 20, color: Colors.black),
                             ),
                             Text(
                               "18 services",
                               style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.black),
                             )
                           ],
                         ),
